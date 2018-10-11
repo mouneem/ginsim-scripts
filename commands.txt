@@ -18,3 +18,12 @@ java -cp GINsim.jar:extensions/jython-standalone-2.7.0.jar org.ginsim.Launcher \
 Generate Perturbations
 java -cp GINsim.jar:extensions/jython-standalone-2.7.0.jar org.ginsim.Launcher \
 -s Workflows/GeneratePerturbations.py Model.zginml [export:name] [size:0-2]
+
+Apply Regulation perturbation
+java -cp GINsim.jar:extensions/jython-standalone-2.7.0.jar org.ginsim.Launcher \
+-s Workflows/ApplyInteractionPerturbation.py Model.zginml [inter:listofpert.csv]\
+ [export:modelfilename]
+
+Generate Stable States and export them to csv file
+java -cp GINsim.jar:extensions/jython-standalone-2.7.0.jar org.ginsim.Launcher \
+-s Workflows/GenerateStableStates.py Model.zginml  [export:filename.csv]

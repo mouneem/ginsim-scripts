@@ -52,4 +52,4 @@ else:
     perturbed_model =  [perturbed_model]
 
 print type(perturbed_model[0])
-lqm.saveModel(perturbed_model[0], "modelname.sbml", "ginml")
+lqm.saveModel(perturbed_model[0], getExportName(gs), "ginml")
