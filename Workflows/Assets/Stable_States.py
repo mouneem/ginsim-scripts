@@ -45,4 +45,13 @@ def Get_Stable_states_from_list(gs,model):
     return list_of_stable_states
 
 
-#print(Get_List_of_Stable_states(gs,model(gs)))
+def filtre_states(list_of_stable_states, pattern):
+    sat = []
+    for stable_state in list_of_stable_states:
+        match = 0
+        for i in range(len(pattern)):
+            if stable_state[i] == -1 or pattern[i] == "*" or str(stable_state[i]) == pattern[i]:
+                match = match + 1
+        if match == len(pattern):
+            sat.append(stable_state)
+    return sat

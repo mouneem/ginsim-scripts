@@ -27,3 +27,13 @@ java -cp GINsim.jar:extensions/jython-standalone-2.7.0.jar org.ginsim.Launcher \
 Generate Stable States and export them to csv file
 java -cp GINsim.jar:extensions/jython-standalone-2.7.0.jar org.ginsim.Launcher \
 -s Workflows/GenerateStableStates.py Model.zginml  [export:filename.csv]
+
+Filte Perturbation by Value
+ java -cp GINsim.jar:extensions/jython-standalone-2.7.0.jar org.ginsim.Launcher \
+ -s Workflows/getRestrictedPerturbations.py Model.zginml [export:export.csv] \
+ [rest:max/min/range:0] [input:filename.csv]
+
+
+ java -cp GINsim.jar:extensions/jython-standalone-2.7.0.jar org.ginsim.Launcher \
+ -s Workflows/getRestrictedStableStates.py Model.zginml [export:filename] \
+ [pattern:******************]

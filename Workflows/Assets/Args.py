@@ -80,6 +80,12 @@ def getRestType(gs):
             v = [s[1],s[2]]
             return v
 
+def getPattern(gs):
+    for i in range(1,len(gs.args)):
+        if "pattern:" in gs.args[i]:
+            s = str(gs.args[i]).replace("pattern:", "" )
+            return s
+
 def getPerturbations(gs):
     for i in range(1,len(gs.args)):
         p = []
