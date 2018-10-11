@@ -29,6 +29,15 @@ def getInputFileName(gs):
             return False
 
 
+def getModelFile(gs):
+    for i in range(1,len(gs.args)):
+        if "model:" in gs.args[i]:
+            s = str(gs.args[i]).replace("model:","")
+            return s
+        else:
+            return False
+
+
 def getInterArg(gs):
     for i in range(1,len(gs.args)):
         if "inter:" in gs.args[i]:
