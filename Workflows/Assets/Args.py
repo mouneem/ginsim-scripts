@@ -1,8 +1,11 @@
 
 def getExportName(gs):
     for i in range(1,len(gs.args)):
-        if "export:" in gs.args[i]:
-             return gs.args[i].replace('export:', '')
+        if "export" in str(gs.args[i]):
+            s = str(gs.args[i]).replace('export:', '')
+            print "exporting file to :"+s
+            return s
+    return False
 
 def getPerturbationSize(gs):
     for i in range(1,len(gs.args)):
@@ -93,3 +96,9 @@ def getPerturbations(gs):
                except Exception as e:
                    raise
     return []
+def getSinglePerturbation(gs):
+    for i in range(1,len(gs.args)):
+        if "pert:" in gs.args[i]:
+            s = str(gs.args[i]).replace('pert:', '')
+            return s
+    return False

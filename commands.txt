@@ -1,0 +1,20 @@
+
+
+
+Apply a given Perturbation to a model
+java -cp GINsim.jar:extensions/jython-standalone-2.7.0.jar org.ginsim.Launcher \
+-s Workflows/ApplyPerturbation.py MODEL.zginml [export:exportedfile] pert:ZEB1%1
+
+Apply a given perturbation and get stable states of the perturbed model
+java -cp GINsim.jar:extensions/jython-standalone-2.7.0.jar org.ginsim.Launcher \
+-s Workflows/GetStableStatesAfterPerturbations.py Model.zginml /
+[pert:CellCycleArrest,0-CellCycleArrest,1] [export:stableS]
+
+
+Compare the Stable States of two models
+java -cp GINsim.jar:extensions/jython-standalone-2.7.0.jar org.ginsim.Launcher \
+-s Workflows/CompareStableStates.py Model1.zginml  model:Model2.zginml
+
+Generate Perturbations
+java -cp GINsim.jar:extensions/jython-standalone-2.7.0.jar org.ginsim.Launcher \
+-s Workflows/GeneratePerturbations.py Model.zginml [export:name] [size:0-2]

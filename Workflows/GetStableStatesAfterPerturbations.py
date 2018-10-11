@@ -21,5 +21,4 @@ def Apply_List_of_Perturbation_to_model(model,perturbations):
     return model
 
 
-
-print(export_list_of_lists_to_csv(gs,Get_Stable_states_from_list(gs,Apply_List_of_Perturbation_to_model(m,getPerturbations(gs))),getExportName(gs)))
+export_list_of_lists_to_csv(gs,Get_Stable_states_from_list(gs,Apply_List_of_Perturbation_to_model(m,getPerturbations(gs))),getExportName(gs))

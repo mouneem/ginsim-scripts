@@ -12,13 +12,9 @@ def export_flat_list_to_csv(gs,a_list,filename):
         print a_list
 
 def export_list_of_lists_to_csv(gs,a_list,filename):
-    if checkIfExport(gs):
+    if getExportName(gs) != False:
         with open(filename, "w") as output:
             writer = csv.writer(output, lineterminator='\n')
             writer.writerows(a_list)
     else:
         print a_list
-
-def checkIfExport(gs):
-    if getExportName(gs):
-        return True
