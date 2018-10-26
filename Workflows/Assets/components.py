@@ -18,7 +18,6 @@ def get_component(list_of_components_and_max):
     return list_of_components
 
 
-
 #get all comps index
 def get_all_index_nodes(gs):
     no = gs.open(gs.args[0]).getNodeOrder()
@@ -58,6 +57,7 @@ def get_nodes_by_index(gs, list_of_index):
     for n in list_of_index:
         nodeList.append(nodeOrder[n])
     return nodeList
+
 
 #get node info
 #input should be a list of nodes

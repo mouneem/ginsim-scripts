@@ -68,6 +68,7 @@ def getInteractionPert(gs):
             return False
 
 
+
 # def GraphPlot(gs,data):
 #     for i in range(1,len(gs.args)):
 #         if "graph:" in gs.args[i]:
@@ -84,6 +85,12 @@ def getPattern(gs):
     for i in range(1,len(gs.args)):
         if "pattern:" in gs.args[i]:
             s = str(gs.args[i]).replace("pattern:", "" )
+            return s
+
+def getInputPattern(gs):
+    for i in range(1,len(gs.args)):
+        if "in:" in gs.args[i]:
+            s = str(gs.args[i]).replace("in:", "" )
             return s
 
 def getPerturbations(gs):

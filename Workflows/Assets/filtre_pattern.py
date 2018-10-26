@@ -14,7 +14,7 @@ def check_size_equal(list_of_patterns):
 
 #filtring function !
 def filltr_patterns(patterns,filltrs):
-    output = []0
+    output = []
     if check_size_equal(patterns+filltrs):
         L = len(filltrs[0])
         for pattern in patterns:
