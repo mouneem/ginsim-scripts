@@ -37,3 +37,7 @@ Filte Perturbation by Value
  java -cp GINsim.jar:extensions/jython-standalone-2.7.0.jar org.ginsim.Launcher \
  -s Workflows/getRestrictedStableStates.py Model.zginml [export:filename] \
  [pattern:******************]
+ 
+ 
+ java -cp GINsim.jar:extensions/jython-standalone-2.7.0.jar org.ginsim.Launcher -s Workflows/input_SubStableStates.py  Model.zginml [export:filename] in:0001001110 pattern:10011111100000000101111111111011110000002
+
