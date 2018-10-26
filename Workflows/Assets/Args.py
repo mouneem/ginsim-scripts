@@ -23,6 +23,9 @@ def getPerturbationSize(gs):
     return [1]
 
 
+
+
+
 def getInputFileName(gs):
     for i in range(1,len(gs.args)):
         if "input:" in gs.args[i]:
@@ -91,6 +94,13 @@ def getInputPattern(gs):
     for i in range(1,len(gs.args)):
         if "in:" in gs.args[i]:
             s = str(gs.args[i]).replace("in:", "" )
+            return s
+
+
+def getSize(gs):
+    for i in range(1,len(gs.args)):
+        if "sizep:" in gs.args[i]:
+            s = str(gs.args[i]).replace("sizep:", "" )
             return s
 
 def getPerturbations(gs):

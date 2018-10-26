@@ -23,7 +23,7 @@ def get_perturbations_list(model,size):
     componets = get_component(get_list_of_components_and_max(model))
     cleaned_list_of_perturbations = []
     for s in size:
-        c = Remove_duplcations(tuples_to_lists(list(itertools.combinations(componets,s))))
+        c = Remove_duplcations(tuples_to_lists(list(itertools.combinations(componets,int(s)))))
         cleaned_list_of_perturbations = cleaned_list_of_perturbations + c
     #returning the list of string each string refer to combination of component and a state
     return cleaned_list_of_perturbations

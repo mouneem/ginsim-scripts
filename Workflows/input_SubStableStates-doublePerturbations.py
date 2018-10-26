@@ -28,18 +28,16 @@ print input_perturbation
 
 m2 = Apply_Perturbation_to_model(m,input_perturbation)
 
-
-
-all_perturbations = get_perturbations_list(m,getPerturbationSize(gs))
+all_perturbations = get_perturbations_list(m,getSize(gs))
 Pert_and_StableStates = []
 
 for perturbation in all_perturbations:
     perturbation2 = list(itertools.chain.from_iterable(perturbation))
     pt = ""
     for i in range(0,len(perturbation2),2):
-        pt += str(perturbation2[i])+"%"+str(perturbation2[i+1])
+        pt += str(perturbation2[i])+"%"+str(perturbation2[i+1])+","
     perturbed_model = Apply_Perturbation_to_model(m2,pt)
-    print perturbed_model
+    print pt
     Pert_and_StableStates.append([[pt],Get_List_of_Stable_states(gs,perturbed_model)])
 
 
@@ -50,13 +48,11 @@ for pert_states in Pert_and_StableStates :
     Similarity_Found = False
     for stable_state in pert_states[1]:
         c = 0
-        print "\n"
         for i,j in zip(stable_state[len(input_pattern):],restriction):
             if str(i)==str(j):
                 c += 1
         if c > len(restriction)-1:
             Similarity_Found = True
-    print Similarity_Found
     if Similarity_Found == False:
         out.append([pert_states[0][0],pert_states[1]])
 
@@ -67,8 +63,9 @@ print "------"
 
 forexport = []
 for i in out:
-    forexport.append(i)
-
+    for xi in i[1]:
+        xi = [i[0]] + xi
+        forexport.append(xi)
 
 print forexport
 export_list_of_lists_to_csv(gs,forexport,getExportName(gs))
