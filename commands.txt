@@ -39,5 +39,5 @@ Filte Perturbation by Value
  [pattern:******************]
  
  
- java -cp GINsim.jar:extensions/jython-standalone-2.7.0.jar org.ginsim.Launcher -s Workflows/input_SubStableStates.py  Models/GS_New_Model_v25.zginml export:sub.csv in:0001001110 pattern:10011111100000000101111111111011110000002
+ java -cp GINsim.jar:extensions/jython-standalone-2.7.0.jar org.ginsim.Launcher -s Workflows/input_SubStableStates.py  Model.zginml [export:filename] in:0001001110 pattern:10011111100000000101111111111011110000002
 
