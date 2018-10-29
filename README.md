@@ -135,8 +135,8 @@ Finaly the list of perturbations is exported to the file List_of_Perturbations.c
 ```
 We get the list of perturbations exported to the file List_of_Perturbations.csv as follow :
 
-| | 
-|---------|
+| | |
+|---------|---------|
 | Gene_A,0, | Gene_B,0 | 
 | Gene_A,0, | Gene_B,1 | 
 | Gene_A,0, | Gene_C,0 | 
