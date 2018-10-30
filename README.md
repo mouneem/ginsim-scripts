@@ -197,8 +197,35 @@ In order to run this scripts the user should specify a pattern for the inputs, a
 The type can be:
 * not
 * or
-	
+
+
+### Example of type not 	
 ```bash
 java -cp GINsim.jar:extensions/jython-standalone-2.7.0.jar org.ginsim.Launcher \
 -s Workflows/SubStableStates.py Model1.zginml fix:00000000 type:not pattern:***1111*10101***01111
+```
+
+### Example of type or 	
+```bash
+java -cp GINsim.jar:extensions/jython-standalone-2.7.0.jar org.ginsim.Launcher \
+-s Workflows/SubStableStates.py Model1.zginml fix:00000000 type:or pattern:***1111*10101***01111
+```
+
+## 8. getRestrictedPerturbations.py
+This script can be used to apply filtres in order to affine a list of perturbations of a model. 
+```bash
+java -cp GINsim.jar:extensions/jython-standalone-2.7.0.jar org.ginsim.Launcher \
+-s Workflows/getRestrictedPerturbations.py Model1.zginml size:1-2 rest:max:1
+```
+the type of restrications can be:
+* max
+* min
+* range
+
+
+## 9. getRestrictedPerturbations.py
+This script can be used to apply filtres in order to affine the resulting list of stable states of a model. 
+```bash
+java -cp GINsim.jar:extensions/jython-standalone-2.7.0.jar org.ginsim.Launcher \
+-s Workflows/getRestrictedPerturbations.py Model1.zginml pattern:*******001
 ```
