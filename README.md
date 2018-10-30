@@ -95,8 +95,8 @@ Assets
 ```
 
 ## 4. Workflow / Pipeline
-### 1. GeneratePerturbations.py
-This script allows the generation all possible perturbations from a given model by:
+## 1. GeneratePerturbations.py
+This script allows the generation of all possible perturbations from a given model by:
 1. Extracting the name and the maximum value of a each node from the model.
 1. Computing all the possible states of each node.
 1. Combining the difirent satates of nodes (if the size of perturbation > 1 )
@@ -128,7 +128,7 @@ Finaly the list of perturbations is exported to the file List_of_Perturbations.c
 | Gene_C,0 |
 | Gene_C,1 |
 
- #### Example 1: Double Perturbations
+ #### Example 2: Double Perturbations
  Working with the same previous model, we want to get all the possible perturbation of size 2 and 3. We can use the command
 ```bash
  java -cp GINsim.jar:extensions/jython-standalone-2.7.0.jar org.ginsim.Launcher -s Workflow/GeneratePerturbations.py Models/genesModels.zginml size:2-3
@@ -150,3 +150,20 @@ We get the list of perturbations exported to the file List_of_Perturbations.csv 
 | Gene_B,0 | Gene_C,0 | 
 | Gene_B,0 | Gene_C,1 | 
 | ... | ...	| 
+
+## 2. GenerateStableStates.py
+Biological phenotype are represented with stable states. based on a given model, this script generates the list of stable states of this model. 
+Stable states can have two type of representation
+1. List of values where each value represent the level of exporetion of a component (the value -1 means that the components can take any value)
+1. A pattern (string) where each character represent the level of exporetion of a component (the character * means that the components can take any value)
+
+```bash
+ java -cp GINsim.jar:extensions/jython-standalone-2.7.0.jar org.ginsim.Launcher -s Workflow/GenerateStableStates.py Models/genesModels.zginml export:list.csv
+```
+Using the model _genesModels.zginml_ the command above allows to generating all possible statable states then exporting them as csv file
+
+## 3. ApplyPerturbations.py
+A perturbation basicly is fixing the a component into a given value. this script generate new model by applying a given perturbation to model.
+```bash
+ java -cp GINsim.jar:extensions/jython-standalone-2.7.0.jar org.ginsim.Launcher -s Workflow/ApplyPerturbations.py Models/genesModels.zginml perturbation:GeneA%1
+```
