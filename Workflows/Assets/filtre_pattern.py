@@ -80,3 +80,39 @@ def filltr_patterns_not(patterns,filltrs):
         return output
     else:
         return -1
+
+
+
+def not_filtre_stable_states_by_perturbation(list_of_patterns_and_perturbations,restriction):
+    valid_states_per_perturbation = []
+    for perturbation_and_state in list_of_patterns_and_perturbations:
+        valid_states = []
+        for state in perturbation_and_state[1]:
+            #loop pattern size
+            counter = 0
+            for j in range(len(restriction)):
+                if (restriction[j] == str(state[j]) or str(state[j]) == "-1") or restriction[j] == "*" :
+                    counter += 1
+            #print counter, len(restriction)
+            if counter != len(restriction):
+                valid_states.append(state)
+        if len(valid_states) == len(perturbation_and_state[1]):
+            valid_states_per_perturbation.append([perturbation_and_state[0],perturbation_and_state[1]])
+    return valid_states_per_perturbation
+
+
+def or_filtre_stable_states_by_perturbation(list_of_patterns_and_perturbations,restriction):
+    valid_states_per_perturbation = []
+    for perturbation_and_state in list_of_patterns_and_perturbations:
+        valid_states = []
+        for state in perturbation_and_state[1]:
+            #loop pattern size
+            counter = 0
+            for j in range(len(restriction)):
+                if restriction[j] == str(state[j]) or "-1" == str(state[j]) or restriction[j] == "*":
+                    counter += 1
+            if counter == len(restriction):
+                valid_states.append(state)
+        if len(valid_states) == len(perturbation_and_state[1]):
+                valid_states_per_perturbation.append([perturbation_and_state[0],valid_states])
+    return valid_states_per_perturbation

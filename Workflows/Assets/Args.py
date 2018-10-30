@@ -97,6 +97,20 @@ def getInputPattern(gs):
             return s
 
 
+
+def getFix(gs):
+    for i in range(1,len(gs.args)):
+        if "fix:" in gs.args[i]:
+            s = str(gs.args[i]).replace("fix:", "" )
+            return s
+
+def getType(gs):
+    for i in range(1,len(gs.args)):
+        if "type:" in gs.args[i]:
+            s = str(gs.args[i]).replace("type:", "" )
+            return s
+
+
 def getSize(gs):
     for i in range(1,len(gs.args)):
         if "sizep:" in gs.args[i]:
