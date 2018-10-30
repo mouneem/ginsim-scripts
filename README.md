@@ -167,3 +167,38 @@ A perturbation basicly is fixing the a component into a given value. this script
 ```bash
  java -cp GINsim.jar:extensions/jython-standalone-2.7.0.jar org.ginsim.Launcher -s Workflow/ApplyPerturbations.py Models/genesModels.zginml perturbation:GeneA%1
 ```
+
+## 4. ApplyInteractionPerturbation.py
+Similar to the previous script, this one applies a given perturbation on an interaction in order to fix the interaction between two components of a given value
+
+```bash
+java -cp GINsim.jar:extensions/jython-standalone-2.7.0.jar org.ginsim.Launcher -s Workflows/ApplyInteractionPerturbation.py Model.zginml inter:listofpert.csv
+```
+With the file listofpert.csv containing the list of perturbations to apply.
+
+
+## 5. GetStableStatesAfterPerturbations.py
+This scripts allow to the users to apply a perturbation on a model then get the list of stable states of the perturbed model.
+```bash
+java -cp GINsim.jar:extensions/jython-standalone-2.7.0.jar org.ginsim.Launcher -s Workflows/GetStableStatesAfterPerturbations.py Model.zginml pert:CellCycleArrest,0-CellCycleArrest,1 export:ListOfStableStates.csv
+```
+**pert:** the perturbation to apply.
+**export:** the name of the csv file to export.
+
+## 6. CompareStableStates.py
+This scripts allows the comparaison the stable states of two given models and returns the diffrent stable states	
+```bash
+java -cp GINsim.jar:extensions/jython-standalone-2.7.0.jar org.ginsim.Launcher \
+-s Workflows/CompareStableStates.py Model1.zginml  model:Model2.zginml
+```
+
+## 7. SubStableStates.py
+In order to run this scripts the user should specify a pattern for the inputs, a pattern of restriction and the type of restriction to apply.
+The type can be:
+* not
+* or
+	
+```bash
+java -cp GINsim.jar:extensions/jython-standalone-2.7.0.jar org.ginsim.Launcher \
+-s Workflows/SubStableStates.py Model1.zginml fix:00000000 type:not pattern:***1111*10101***01111
+```
