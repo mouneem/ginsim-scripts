@@ -111,6 +111,9 @@ In order to run this script the user should specify:
 ..* The Size of perturbation (**Specific value**  or **Range**)
 ..* The file name and the path for exporting the resulting list of perturbations (Optional)
 
+![Workflow 1](https://raw.githubusercontent.com/mouneem/ginsim-scripts/master/Workflows/py1.jpg)
+
+
  #### Example 1: Single Perturbation
  In this example let supose that we want to get the list of all possbile single perturbations _(size = 1)_ of the model genesModels.zginml which is stored in the repository ~/models/, using the command:
  let's asume that the model contains three boolean components (Gene_A, Gene_B and Gene_C).
@@ -162,11 +165,17 @@ Stable states can have two type of representation
 ```
 Using the model _genesModels.zginml_ the command above allows to generating all possible statable states then exporting them as csv file
 
+![Workflow 1](https://raw.githubusercontent.com/mouneem/ginsim-scripts/master/Workflows/py2.jpg)
+
+
 ## 3. ApplyPerturbations.py
 A perturbation basicly is fixing the a component into a given value. this script generate new model by applying a given perturbation to model.
 ```bash
  java -cp GINsim.jar:extensions/jython-standalone-2.7.0.jar org.ginsim.Launcher -s Workflow/ApplyPerturbations.py Models/genesModels.zginml perturbation:GeneA%1
 ```
+
+![Workflow 1](https://raw.githubusercontent.com/mouneem/ginsim-scripts/master/Workflows/py3.jpg)
+
 
 ## 4. ApplyInteractionPerturbation.py
 Similar to the previous script, this one applies a given perturbation on an interaction in order to fix the interaction between two components of a given value
@@ -176,6 +185,8 @@ java -cp GINsim.jar:extensions/jython-standalone-2.7.0.jar org.ginsim.Launcher -
 ```
 With the file listofpert.csv containing the list of perturbations to apply.
 
+![Workflow 1](https://raw.githubusercontent.com/mouneem/ginsim-scripts/master/Workflows/py3.jpg)
+
 
 ## 5. GetStableStatesAfterPerturbations.py
 This scripts allow to the users to apply a perturbation on a model then get the list of stable states of the perturbed model.
@@ -184,6 +195,7 @@ java -cp GINsim.jar:extensions/jython-standalone-2.7.0.jar org.ginsim.Launcher -
 ```
 **pert:** the perturbation to apply.
 **export:** the name of the csv file to export.
+![Workflow 1](https://raw.githubusercontent.com/mouneem/ginsim-scripts/master/Workflows/py4.jpg)
 
 ## 6. CompareStableStates.py
 This scripts allows the comparaison the stable states of two given models and returns the diffrent stable states	
@@ -191,6 +203,7 @@ This scripts allows the comparaison the stable states of two given models and re
 java -cp GINsim.jar:extensions/jython-standalone-2.7.0.jar org.ginsim.Launcher \
 -s Workflows/CompareStableStates.py Model1.zginml  model:Model2.zginml
 ```
+![Workflow 1](https://raw.githubusercontent.com/mouneem/ginsim-scripts/master/Workflows/py5.jpg)
 
 ## 7. SubStableStates.py
 In order to run this scripts the user should specify a pattern for the inputs, a pattern of restriction and the type of restriction to apply.
