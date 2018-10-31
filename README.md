@@ -207,6 +207,9 @@ java -cp GINsim.jar:extensions/jython-standalone-2.7.0.jar org.ginsim.Launcher \
 
 ## 7. SubStableStates.py
 In order to run this scripts the user should specify a pattern for the inputs, a pattern of restriction and the type of restriction to apply.
+![Workflow 1](https://raw.githubusercontent.com/mouneem/ginsim-scripts/master/Workflows/py6.jpg)
+
+
 The type can be:
 * not
 * or
