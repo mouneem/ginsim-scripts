@@ -129,6 +129,8 @@ def getPerturbations(gs):
                 return p
             else:
                try:
+                   if isinstance(splited_arg, list):
+                       return splited_arg
                    return splited_arg.split(",")
                except Exception as e:
                    raise

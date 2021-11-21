@@ -1,24 +1,17 @@
 import sys
 sys.path.append(sys.path[0]+'/Assets')
-from perturbation import *
-from Args import *
-from Apply_Perturbation import *
 from Stable_States import *
+from Args import *
 
 print "Workflow started..."
-print "Applying Perts..."
+print "Generate stable states..."
 
 m = model(gs)
 print "Opening Model :"+str(m)
 
+outname = getExportName(gs)
 
-def Apply_List_of_Perturbation_to_model(model,perturbations):
-    list_of_perturbations = []
-    if(perturbations):
-        for perturbation in perturbations:
-            list_of_perturbations.append(lqm.modifyModel(model,"perturbation",perturbation))
-        return list_of_perturbations
-    return model
+stable_states = Get_List_of_Stable_states(gs,m)
+print 'stable_states', stable_states
 
-
-export_list_of_lists_to_csv(gs,Get_Stable_states_from_list(gs,Apply_List_of_Perturbation_to_model(m,getPerturbations(gs))),getExportName(gs))
+export_list_of_lists_to_csv(gs,stable_states,outname)

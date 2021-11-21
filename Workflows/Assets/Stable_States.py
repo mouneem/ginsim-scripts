@@ -18,6 +18,7 @@ def Get_List_of_Stable_states(gs,model):
     searcher.run() # -- Java function
     #get stable states list as java obejctfrom collections import defaultdict
     paths = searcher.getPaths() # -- Java function
+    print('#'*88,paths.countPaths())
     for p in paths: # for each stabe state do:
         #extract the stable state from the java object1
         values = paths.getPath() # -- Java function
