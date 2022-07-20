@@ -7,7 +7,7 @@ You can download the scripts and the tool from [Here](https://github.com/mouneem
 All command lines and steps to follow to process the results are described in this documentation. The same steps can be used for any other models.
 *Disclaimer: we will keep updating the tutorial in the GitHub as the different tools used evolve.
 
-## Table of contents
+## Table of contents  
 1. [Requirements](#Requirements)
 
 ## 1. Requirements
