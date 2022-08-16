@@ -1,4 +1,4 @@
-# GINsim Scripts for Automatic analysis of Signaling and Regulatory Networks
+# GINsim Scripts for Automatic analysis of Signaling and Regulatory Networks 
 The main purpose of network analysis is the understanding of inter-components correlations, thus, how a changeover of the state of a component can affect the behaviour of the whole system. Up to hundreds of components can compose a logical model, the analysis of such models even on optimised software can be very time consuming, due to the huge number of cases that need to be analysed, especially in large models
 The goal of the automatic analysis via scripts is the process different workflows/pipelines in order to process an automatic of logical models.
 
