@@ -10,7 +10,7 @@ All command lines and steps to follow to process the results are described in th
 ## Table of contents  
 1. [Requirements](#Requirements)
 
-## 1. Requirements
+## 1. Requirements 
 * Software: 
 	* [GINSim](http://ginsim.org/downloads)
 	* [Python](http://python.org) 
