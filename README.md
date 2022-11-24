@@ -11,7 +11,7 @@ All command lines and steps to follow to process the results are described in th
 1. [Requirements](#Requirements)
 
 ## 1. Requirements 
-* Software: 
+* Software:  
 	* [GINSim](http://ginsim.org/downloads)
 	* [Python](http://python.org) 
 	* [Java](http://java.com)
